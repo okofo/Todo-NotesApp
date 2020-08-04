@@ -1,5 +1,7 @@
+import 'package:TodosApp/providers/NotesProvider.dart';
 import 'package:TodosApp/providers/TaskProvider.dart';
 import 'package:TodosApp/providers/UserProvider.dart';
+import 'package:TodosApp/screens/notesPage.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -71,9 +73,13 @@ class MainContent extends StatelessWidget {
 
     final p = Provider.of<UserProvider>(context, listen: false);
     final numTodos = Provider.of<TodosModel>(context, listen: false);
+    final provider = Provider.of<NotesModel>(context, listen: false);
+
 
     String user = p.user.username;
     var num1 = numTodos.allTasks.length.toString();
+   var num2 = provider.allNotes.length.toString();
+
 
     return ListView(
       children: <Widget>[
@@ -174,7 +180,7 @@ class MainContent extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => HomeScreen()));
+                              MaterialPageRoute(builder: (_) => NotesPage()));
                         },
                         child: new Container(
                           height: 180.0,
@@ -197,7 +203,7 @@ class MainContent extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  ' 2 Notes',
+                                  ' $num2 Notes',
                                   style: new TextStyle(
                                       fontSize: 20.0,
                                       color: Colors.blueGrey,

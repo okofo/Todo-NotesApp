@@ -1,4 +1,5 @@
 import 'package:TodosApp/screens/NewAddScreen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddButton extends StatelessWidget {
@@ -9,7 +10,7 @@ class AddButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(8.0),
-      color: Colors.blue.withOpacity(0.8),
+      color: Colors.purple.withOpacity(0.8),
       elevation: 5.0,
       shape: RoundedRectangleBorder(
         borderRadius: const BorderRadius.all(
@@ -25,9 +26,9 @@ class AddButton extends StatelessWidget {
               );
             },
         icon: Icon(
-          Icons.add,
+          CupertinoIcons.add,
           color: Colors.white,
-          size: 24,
+          size: 28,
         ),
       ),
     );

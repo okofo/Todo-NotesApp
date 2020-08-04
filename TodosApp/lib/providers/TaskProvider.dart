@@ -1,17 +1,13 @@
 import 'dart:collection';
-
 import 'package:TodosApp/models/Task.dart';
 import 'package:flutter/material.dart';
 
-
 class TodosModel extends ChangeNotifier {
   final List<Task> _tasks = [
-    Task(title: 'Finish the app' , body: 'grab some food'),
+    Task(title: 'Finish the app', body: 'grab some food'),
     Task(title: 'Write a blog post', body: 'Body for show'),
     Task(title: 'Share with community', body: 'be compo anaa'),
   ];
-
-  
 
   UnmodifiableListView<Task> get allTasks => UnmodifiableListView(_tasks);
   UnmodifiableListView<Task> get incompleteTasks =>
@@ -34,7 +30,4 @@ class TodosModel extends ChangeNotifier {
     _tasks.remove(task);
     notifyListeners();
   }
-  
 }
-
-  
