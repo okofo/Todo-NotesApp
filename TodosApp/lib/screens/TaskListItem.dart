@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:TodosApp/models/Task.dart';
 import 'package:TodosApp/providers/TaskProvider.dart';
@@ -14,7 +15,7 @@ class TaskListItem extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 0, top: 3, right: 8, left: 8),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7)),
-        color: Colors.blue[200],
+        color: Colors.blueGrey[100],
         elevation: 0.7,
         child: CheckboxListTile(
           title: Text(
@@ -23,7 +24,7 @@ class TaskListItem extends StatelessWidget {
           ),
           subtitle: Text(task.body),
           secondary: IconButton(
-            icon: Icon(Icons.delete, color: Colors.red[300]),
+            icon: Icon(CupertinoIcons.delete, color: Colors.red),
             onPressed: () {
               Provider.of<TodosModel>(context, listen: false).deleteTodo(task);
             },

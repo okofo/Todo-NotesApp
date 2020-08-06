@@ -75,11 +75,9 @@ class MainContent extends StatelessWidget {
     final numTodos = Provider.of<TodosModel>(context, listen: false);
     final provider = Provider.of<NotesModel>(context, listen: false);
 
-
     String user = p.user.username;
     var num1 = numTodos.allTasks.length.toString();
-   var num2 = provider.allNotes.length.toString();
-
+    var num2 = provider.allNotes.length.toString();
 
     return ListView(
       children: <Widget>[
@@ -89,10 +87,6 @@ class MainContent extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                IconButton(
-                    color: Colors.black,
-                    icon: Icon(Icons.settings),
-                    onPressed: null),
                 Row(children: [
                   new Text(
                     ('Hello $user'),
@@ -102,7 +96,13 @@ class MainContent extends StatelessWidget {
                         color: Colors.blueGrey),
                     textAlign: TextAlign.left,
                   ),
-                  // CircleAvatar()
+                   SizedBox(
+                  width: 175.0,
+                ),
+                  IconButton( alignment: Alignment.centerRight,
+                      color: Colors.black,
+                      icon: Icon(Icons.settings),
+                      onPressed: null),
                 ]),
                 SizedBox(
                   height: 0.0,
@@ -111,8 +111,7 @@ class MainContent extends StatelessWidget {
                   children: <Widget>[
                     new Text(
                       getGreetingMessage(),
-                      style: TextStyle(
-                          fontSize: 25.0),
+                      style: TextStyle(fontSize: 25.0),
                       textAlign: TextAlign.left,
                     ),
                   ],
@@ -153,9 +152,9 @@ class MainContent extends StatelessWidget {
                                 child: Text(
                                   'Tasks',
                                   style: new TextStyle(
-                                      fontSize: 25.0,
-                                      color: Colors.pink,
-                                      fontWeight: FontWeight.bold),
+                                      fontSize: 22.0,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.normal),
                                 ),
                               ),
                               Padding(
@@ -163,7 +162,7 @@ class MainContent extends StatelessWidget {
                                 child: Text(
                                   ' $num1 Tasks',
                                   style: new TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       color: Colors.blueGrey,
                                       fontFamily: 'GrenzeGotisch'),
                                 ),
@@ -195,9 +194,9 @@ class MainContent extends StatelessWidget {
                                 child: Text(
                                   'Notes',
                                   style: new TextStyle(
-                                      fontSize: 25.0,
-                                      color: Colors.amber,
-                                      fontWeight: FontWeight.bold),
+                                      fontSize: 22.0,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.normal),
                                 ),
                               ),
                               Padding(
@@ -205,7 +204,7 @@ class MainContent extends StatelessWidget {
                                 child: Text(
                                   ' $num2 Notes',
                                   style: new TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       color: Colors.blueGrey,
                                       fontFamily: 'GrenzeGotisch'),
                                 ),
@@ -241,9 +240,9 @@ class MainContent extends StatelessWidget {
                                 child: Text(
                                   'Ideas',
                                   style: new TextStyle(
-                                      fontSize: 25.0,
-                                      color: Colors.green,
-                                      fontWeight: FontWeight.bold),
+                                      fontSize: 22.0,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.normal),
                                 ),
                               ),
                               Padding(
@@ -251,7 +250,7 @@ class MainContent extends StatelessWidget {
                                 child: Text(
                                   ' 5 Ideas',
                                   style: new TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       color: Colors.blueGrey,
                                       fontFamily: 'GrenzeGotisch'),
                                 ),
@@ -283,17 +282,17 @@ class MainContent extends StatelessWidget {
                                 child: Text(
                                   'Bookmarks',
                                   style: new TextStyle(
-                                      fontSize: 25.0,
-                                      color: Colors.blue,
-                                      fontWeight: FontWeight.bold),
+                                      fontSize: 22.0,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.normal),
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  ' 7 Bookmarks',
+                                  ' 7 Links',
                                   style: new TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       color: Colors.blueGrey,
                                       fontFamily: 'GrenzeGotisch'),
                                 ),

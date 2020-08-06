@@ -10,7 +10,7 @@ class AddButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(8.0),
-      color: Colors.purple.withOpacity(0.8),
+      color: Colors.blueGrey[300].withOpacity(0.8),
       elevation: 5.0,
       shape: RoundedRectangleBorder(
         borderRadius: const BorderRadius.all(
@@ -27,7 +27,7 @@ class AddButton extends StatelessWidget {
             },
         icon: Icon(
           CupertinoIcons.add,
-          color: Colors.white,
+          color: Colors.black,
           size: 28,
         ),
       ),
